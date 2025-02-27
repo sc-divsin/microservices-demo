@@ -23,12 +23,9 @@ namespace cartservice.cartstore
 {
     public class RedisCartStore : ICartStore
     {
-        private readonly IDistributedCache _cache;
+        private  IDistributedCache _cache;
 
-        public RedisCartStore(IDistributedCache cache)
-        {
-            _cache = cache;
-        }
+        
 
         public async Task AddItemAsync(string userId, string productId, int quantity)
         {
