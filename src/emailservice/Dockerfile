@@ -28,7 +28,7 @@ FROM base
 # Enable unbuffered logging
 ENV PYTHONUNBUFFERED=1
 # Enable Profiler
-ENV ENABLE_PROFILER=1
+
 
 RUN apk update \
     && apk add --no-cache libstdc++ \
@@ -42,5 +42,5 @@ COPY --from=builder /usr/local/lib/python3.12/ /usr/local/lib/python3.12/
 # Add the application
 COPY . .
 
-EXPOSE 8080
+ 
 ENTRYPOINT [ "python", "email_server.py" ]
